@@ -27,7 +27,7 @@ I^2
 = 2\pi \int_0^\infty e^{-r^2} r\,dr.
 $$
 
-With the substitution \\(u=r^2\\), this becomes
+With the substitution $u=r^2$, this becomes
 
 $$
 I^2 = 2\pi \cdot \frac12 \int_0^\infty e^{-u}\,du = \pi.

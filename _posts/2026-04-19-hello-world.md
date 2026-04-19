@@ -15,10 +15,14 @@ $$
 \text{I}^2
 = \left(\int_{-\infty}^{\infty} e^{-x^2}\,dx\right)
   \left(\int_{-\infty}^{\infty} e^{-y^2}\,dy\right)
-= \left(\int_{-\infty}^{\infty}\left(\int_{-\infty}^{\infty} e^{-(x^2+y^2)}\,dx\,dy.
+= \int_{-\infty}^{\infty}\int_{-\infty}^{\infty} e^{-(x^2+y^2)}\,dx\,dy.
 $$
 
 Now we divert all of our attendion to the integrand $e^{-(x^2+y^2)}$. For every point $(x,y)$ in the Cartesian plane, a simple use of Pythagoras' theorem tells us that $x^2+y^2$ is the square of the point's distance from the origin, which we define with $z=\sqrt{x^2+y^2}$. Visually, we are now finding the volume of a (very large) bell, rotationally symmetric about the origin, in which it reaches a peak height of $e^{-(0^2+0^2)}=1$. An illustration is given below.
+
+<figure>
+  <img src="/assets/img/gaussian bell.jpg">
+</figure>
 
 $$
 I^2

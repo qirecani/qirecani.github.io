@@ -67,10 +67,10 @@ $$
 $$
 
 # Extra Trivia/Problems
-It's well known that no elementary expression exists for the definite integrals of $e^{-x^2}$ (or $e^{\alpha x^2}$ for some $\alpha\in\mathbb{R}\setminus\{0\}$) with respect to $x$. However, an interesting problem I found lurking in the depths of the Simon Marais Mathematics Competition practice problems:
+It's well known that no elementary expression exists for the definite integrals of $e^{-x^2}$ (or $e^{\alpha x^2}$ for some $\alpha\in\mathbb{R}\setminus\{0\}$) with respect to $x$. However, an interesting problem I found lurking in the depths of the Simon Marais Mathematics Competition practice problems.
 
 $$
-\text{Which of the two is larger? }\int_0^{\int_0^1e^{-x^2}dx}e^{x^2}dx\quad\text{or}\quad\int_0^{\int_0^1e^{x^2}dx}e^{-x^2}dx?
+\text{Which of the two is larger: }\int_0^{\int_0^1e^{-x^2}dx}e^{x^2}dx\quad\text{or}\quad\int_0^{\int_0^1e^{x^2}dx}e^{-x^2}dx?
 $$
 
 More on this later...

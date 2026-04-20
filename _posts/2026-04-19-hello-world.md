@@ -3,7 +3,7 @@ layout: post
 title: "A Reasonably Normal First Post"
 ---
 
-The Gaussian integral had stumped folks in the eighteenth century due to its resemblance, yet also its unlikeness, to an elementary form. It also stumped me not so long ago. Here it is, presented innocuously.
+The Gaussian integral had stumped folks in the eighteenth century due to its resemblance, yet also its unlikeness, to an elementary antiderivative. It also stumped me not so long ago. Here it is, presented innocuously.
 
 $$
 I = \int_{-\infty}^{\infty} e^{-x^2}\,dx.
@@ -67,7 +67,7 @@ $$
 $$
 
 # Extra Trivia/Problems
-It's well known that no elementary expression exists for the definite integrals of $e^{-x^2}$ (or $e^{\alpha x^2}$ for some real $\alpha\ne0$) with respect to $x$. Consequently, this leads me to share an interesting problem I found lurking in the depths of the Simon Marais Mathematics Competition practice problems.
+It's well known that no elementary antiderivative exists for the definite integrals of $e^{-x^2}$ (or $e^{\alpha x^2}$ for some real $\alpha\ne0$) with respect to $x$. Consequently, this leads me to share an interesting problem I found lurking in the depths of the Simon Marais Mathematics Competition practice problems.
 
 $$
 \text{Which of the two is larger: }\int_0^{\int_0^1e^{-x^2}dx}e^{x^2}dx\text{ or }\int_0^{\int_0^1e^{x^2}dx}e^{-x^2}dx?
@@ -82,7 +82,7 @@ $$
 With $f(0)=g(0)=0$, we want to compare $f(1)$ and $g(1)$. Let $f'(t)=\frac{d}{dt}f(t)$ and $g'(t)=\frac{d}{dt}g(t)$. Then, by the Chain Rule and Fundamental Theorem of Calculus,
 
 $$
-f'(t)=\exp\left[\left(\int_0^te^{-x^2}dx\right)^2\right]\cdot e^{-t^2}\quad\text{and}\quad f'(t)=\exp\left[-\left(\int_0^te^{x^2}dx\right)^2\right]\cdot e^{t^2}.
+f'(t)=\exp\left[\left(\int_0^te^{-x^2}dx\right)^2\right]\cdot e^{-t^2}\quad\text{and}\quad g'(t)=\exp\left[-\left(\int_0^te^{x^2}dx\right)^2\right]\cdot e^{t^2}.
 $$
 
 Then,
@@ -133,7 +133,7 @@ $$
 \int_{-\infty}^\infty\left(\int_{-\infty}^z e^{-x^2}dx\right)\cdot \frac{1}{\sqrt{2\pi}}e^\frac{-z^2}{2}dz=\int_{-\infty}^\infty e^{-x^2}\left(\int_{z=x}^\infty\frac{1}{\sqrt{2\pi}}e^\frac{-z^2}{2}dz\right)dx=\int_{-\infty}^\infty e^{-x^2}\left(1-\Phi(x)\right)dx.
 $$
 
-Now, one more trick is to realise that $\frac12-\Phi(x)$ is an odd function with respect to $x$, and the product of an odd and even function is also an odd function, which integrates to 0 over the real line (given the necessary conditions that we shall not check here!). So, we rewrite the integral above as
+Now, one more trick is to realise that $\frac12-\Phi(x)$ is an odd function with respect to $x$, and the product of an odd and even function is also an odd function, which integrates to $0$ over the real line (given the necessary conditions that we shall not check here!). So, we rewrite the integral above as
 
 $$
 \int_{-\infty}^\infty e^{-x^2}\left(1-\Phi(x)\right)dx=\int_{-\infty}^\infty e^{-x^2}\cdot\frac12dx+

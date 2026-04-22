@@ -59,7 +59,7 @@ $$
 \text{Let }\tau=\min(n\in\mathbb{N}:\sum_{i=1}^nX_i\ge1),\text{ where each }X_i\sim U(0,1)\text{ are i.i.d. Evaluate }\mathbb{E}[\tau].
 $$
 
-A super common misconception is to think that $\mathbb{E}[X_i]=\frac12$, so it would take on average two 'draws' to get to $1$, deducing that $\mathbb{E}[\tau]=2$. However, this is clearly an underestimation since $\tau\ge2$ almost surely, and $\mathbb{P}(\tau>2)>0$, so actually, $\mathbb{E}[\tau]>2$. The *correct* way to approach this problem is to recursively define a conditional expectation $f(x)=\mathbb{E}[\text{additional no. draws to reach a sum }\ge1\mid\text{current sum }=x]$, such that for $x\in(0,1)$,
+A super common misconception is to think that $\mathbb{E}[X_i]=\frac12$ (true!), so it would take on average two 'draws' to get to $1$, deducing that $\mathbb{E}[\tau]=2$ (false!). However, this is clearly an underestimation since $\tau\ge2$ almost surely, and $\mathbb{P}(\tau>2)>0$, so actually, $\mathbb{E}[\tau]>2$. The *correct* way to approach this problem is to recursively define a conditional expectation $f(x)=\mathbb{E}[\text{additional no. draws to reach a sum }\ge1\mid\text{current sum }=x]$, such that for $x\in(0,1)$,
 
 $$
 f(x)=1+\int_0^{1-x}f(x+t)dt=1+\int_x^1f(t)dt.

@@ -34,7 +34,7 @@ $$
 Now, when $y\le m$, $\mathbb{P}(X\le \frac{m}{y})=1$, so the integral is
 
 $$
-\int_0^1\mathbb{P}(X\le \frac{m}{y})dy=\int_0^mdy+\int_m^1\frac{m}{y}dy=m-m\log m,m\in(0,1).
+\int_0^1\mathbb{P}(X\le \frac{m}{y})dy=\int_0^mdy+\int_m^1\frac{m}{y}dy=m-m\log m,\quad m\in(0,1).
 $$
 
 We now use this cdf and Law of Total Probability again, where
@@ -46,11 +46,41 @@ $$
 We now make the substitution $s=\frac1z\implies dz=\frac{-1}{s^2}ds$ and obtain
 
 $$
-\int_0^1t^{\frac1z}-t^{\frac1z}\log t^{\frac1z}dz=\int_1^\infty\frac{t^s}{s^2}\left(1-s\log t\right)dz=-\int_1^\infty d\left(\frac{t^u}{u}\right)=t,t\in(0,1).
+\int_0^1t^{\frac1z}-t^{\frac1z}\log t^{\frac1z}dz=\int_1^\infty\frac{t^s}{s^2}\left(1-s\log t\right)dz=-\int_1^\infty d\left(\frac{t^s}{s}\right)=t,\quad t\in(0,1).
 $$
 
 $$
 \implies\mathbb{P}((XY)^Z\le t)=t\implies(XY)^Z\sim U(0,1).
 $$
 
-and we are done.
+That may as well have been a nice calculus warmup, bringing us to our next problem:
+
+$$
+\text{Let }\tau=\min(n\in\mathbb{N}:\sum_{i=1}^nX_i\ge1),\text{ where each }X_i\sim U(0,1)\text{ are i.i.d. Evaluate }\mathbb{E}[\tau].
+$$
+
+A super common misconception is to think that $\mathbb{E}[X_i]=\frac12$, so it would take on average two 'draws' to get to $1$, deducing that $\mathbb{E}[\tau]=2$. However, this is clearly an underestimation since $\tau\ge2$ almost surely, and $\mathbb{P}(\tau>2)>0$, so actually, $\mathbb{E}[\tau]>2$. The *correct* way to approach this problem is to recursively define a conditional expectation $f(x)=\mathbb{E}[\text{additional no. draws to reach a sum }\ge1\mid\text{current sum }=x]$, such that for $x\in(0,1)$,
+
+$$
+f(x)=1+\int_0^{1-x}f(x+t)dt=1+\int_x^1f(t)dt.
+$$
+
+We now differentiate both sides with respect to $x$ and get
+
+$$
+\frac{d}{dx}f(x)=-f(x).
+$$
+
+Which has a simple solution $f(x)=Ce^{-x}$. Substitute this into the integral definition of $f(0)$ to get
+
+$$
+C=f(0)=1+\int_0^1f(t)dt=1+\int_0^1Ce^{-t}dt=1+C(1-e^{-1})\implies C=e.
+$$
+
+Therefore, $f(x)=e^{1-x}$ and
+
+$$
+\mathbb{E}[\tau]=f(0)=e
+$$
+
+What a $\textbb{great expectation}$!

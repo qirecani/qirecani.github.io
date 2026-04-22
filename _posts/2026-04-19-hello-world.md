@@ -24,13 +24,13 @@ Now we divert all of our attendion to the integrand $e^{-(x^2+y^2)}$. For every 
   <img src="/assets/img/gaussian bell.jpg">
 </figure>
 
-We now approximate the volume of this bell using hollow cylinders of height that 'wrap' around each other. We start at the origin with a very thin vertical 'rod' with height $1$. We tightly wrap around this cylinder with a hollow cylinder with height $e^{-\Delta r^2}$ and 'thickness' $\Delta r$. More generally, for all $r>0$, the additional layer of volume added on per $\Delta r$ increment is just the difference in volumes of two solid cylinders - one with base radius $r$ and height $e^{-(r+\Delta r)^2}$, the other with base radius $r+\Delta r$ and height $e^{-(r+\Delta r)^2}$. The incremental volume is given below
+We now approximate the volume of this bell using hollow cylinders that 'wrap' around each other. We start at the origin with a very thin vertical 'rod' with height $1$. We tightly wrap around this cylinder with another hollow cylinder with height $e^{-\Delta r^2}$ and 'thickness' $\Delta r$. More generally, for all $r>0$, the additional layer of volume added on per $\Delta r$ increment is just the difference in volumes of two solid cylinders - one with base radius $r$ and height $e^{-(r+\Delta r)^2}$, the other with base radius $r+\Delta r$ and height $e^{-(r+\Delta r)^2}$. The incremental volume is given below
 
 $$
 \pi \left[(r+\Delta r)^2-r^2\right]e^{-(r+\Delta r)^2}=\pi (2r\Delta r+\Delta r^2)e^{-r^2}\cdot e^{-2r\Delta r-\Delta r^2}.
 $$
 
-Now, we use the notation $o(\Delta r)$ to describe a function $f(r)$ such that $f(r)\to 0$ 'much quicker' than $\Delta r\to 0$. We first observe that a factor of $\Delta r^2=o(\Delta r)$ can be distributed. Additionally, a Taylor Expansion gives $e^{-2r\Delta r-\Delta r^2}=1-2r\Delta r + o(\Delta r)$. Finally, $\Delta r$ is another factor that, when distributed, leaves a simplifies the expression above to
+Now, we use the notation $o(\Delta r)$ to describe a function $f(r)$ such that $f(r)\to 0$ 'much quicker' than $\Delta r\to 0$, i.e. $\lim_{\Delta r\to0}\frac{f(r)}{\Delta r}=0$. We first observe that a factor of $\Delta r^2=o(\Delta r)$ can be distributed. Additionally, a Taylor Expansion gives $e^{-2r\Delta r-\Delta r^2}=1-2r\Delta r + o(\Delta r)$. Finally, $\Delta r$ is another factor that, when distributed, simplifies the expression above to
 
 $$
 2\pi re^{-r^2}\cdot \Delta r+o(\Delta r)

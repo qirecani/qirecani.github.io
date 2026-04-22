@@ -48,7 +48,7 @@ $$
 \lim_{\Delta r \to 0}\sum_\Pi \left(2\pi re^{-r^2}\cdot \Delta r+o(\Delta r)\right)=\int_0^\infty 2\pi re^{-r^2}dr.
 $$
 
-Giving us an integral that can be solved very handily by inspection! Hence (with some abuse of notation),
+Giving us an integral that can be solved very handily by inspection! With some abuse of notation,
 
 $$
 I^2=\int_0^\infty 2\pi re^{-r^2}dr=\pi\left[-e^{-r^2}\right]^{r=\infty}_{r=0}=\pi.

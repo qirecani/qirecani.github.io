@@ -206,7 +206,7 @@ $$
 $$
 
 $$
-\implies\mathbb{P}(|X_i-X_j|>x,\forall i\ne j)=(1-(n-1)x)^n,\quad x\in(0,\frac{1}{n-1}.
+\implies\mathbb{P}(|X_i-X_j|>x,\forall i\ne j)=(1-(n-1)x)^n,\quad x\in(0,\frac{1}{n-1}).
 $$
 
 This is definitely one of the most surprisingly elegant results I've come across. Now the cherry on top, since the minimum distance between any two distinct $X_i,X_j$ is non-negative almost surely, we can use the tail integration formula on the probability above to obtain another $\textbf{great expectation}$:

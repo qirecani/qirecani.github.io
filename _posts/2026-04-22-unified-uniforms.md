@@ -172,7 +172,7 @@ $$
 $$
 
 $$
-\text{Find }\mathbb{P}(|X_i-X_j|>x,\forall i\ne j)\text{ and }\mathbb{E}[\min(\\{|X_i-X_j|\\}_{i\ne j})].
+\text{Find }\mathbb{P}(|X_i-X_j|>x,\forall i\ne j)\text{ and }\mathbb{E}\left[\min_{i\ne j}(|X_i-X_j|)\right].
 $$
 
 It suffices to only focus on the order statistics of $S$, where
@@ -184,20 +184,44 @@ $$
 In particular, let's try to find the joint distribution of $X_{(1)},X_{(2)},\dots,X_{(n)}$. Intuitively, every permutation of $S$ is equally likely, and so we are led to believe that $f_{X_{(1)},X_{(2)},\dots,X_{(n)}}(x_1,x_2,\dots,x_n)=n!$ with support $0<x_1<x_2<\dots<x_n<1$ (i.e. an $n$-dimensional simplex). We can confirm this by taking a similar combinatorical limit from above, where
 
 $$
-f_{X_{(1)},X_{(2)},\dots,X_{(n)}}(x_1,x_2,\dots,x_n)=\lim_{\Delta x_1\to0,\Delta x_2\to0,\dots,\Delta x_n\to0}\frac{\mathbb{P}(\bigcap_{k=1}^n\left(x_k\le X_{(k)}<x_k+\Delta x_k\right))}{\prod_{k=1}^n\Delta x_k}=n!\prod_{k=1}^nf_X(x_k)=n!,\quad0<x_1<x_2<\dots<x_n.
+f_{X_{(1)},X_{(2)},\dots,X_{(n)}}(x_1,x_2,\dots,x_n)=\lim_{\Delta x_1\to0,\Delta x_2\to0,\dots,\Delta x_n\to0}\frac{\mathbb{P}\left(\bigcap_{k=1}^n\left(x_k\le X_{(k)}<x_k+\Delta x_k\right)\right)}{\prod_{k=1}^n\Delta x_k}
 $$
 
-Hence, all we need to do is find the the subset of $\\{0<x_1<x_2<\dots<x_n\\}$ corresponding to $\bigcap_{k=1}^{n-1}\\{x_{k+1}-x_{k}>x\\}$. Here's where we get a bit sneaky. Define $y_k = x_k - (k-1)x$. Then $x_{k+1}-x_{k}>x\iff y_{k+1}>y{k}$. Thus, the desired volume is the region corresponding to $0<y_1<y_2<\dots<y_n<1-(n-1)x$, another $n$-dimensional simplex with volume $\frac{(1-(n-1)x)^n}{n!}$. Thus, our desired probability is
+$$
+\implies f_{X_{(1)},X_{(2)},\dots,X_{(n)}}(x_1,x_2,\dots,x_n)=n!\prod_{k=1}^nf_X(x_k)=n!,\quad0<x_1<x_2<\dots<x_n.
+$$
+
+Hence, all we need to do is find the the subset of $\\{0<x_1<x_2<\dots<x_n\\}$ corresponding to $\bigcap_{k=1}^{n-1}\\{x_{k+1}-x_{k}>x\\}$. Here's where we get a bit sneaky. Define $y_k = x_k - (k-1)x$. Then $x_{k+1}-x_{k}>x\iff y_{k+1}>y_{k}$. Thus, the desired volume is the region corresponding to $0<y_1<y_2<\dots<y_n<1-(n-1)x$, another $n$-dimensional simplex with volume $\frac{(1-(n-1)x)^n}{n!}$. Thus, our desired probability is
 
 $$
-\mathbb{P}(|X_i-X_j|>x,\forall i\ne j)=\int_{0<y_1<y_2<\dots<y_n<1-(n-1)x}n!dy_1dy_2\dots dy_n=n!\int_{0<y_1<y_2<\dots<x_n<1-(n-1)x}dy_1dy_2\dots dy_n=n!\cdot\frac{(1-(n-1)x)^n}{n!}
+\mathbb{P}(|X_i-X_j|>x,\forall i\ne j)=\int_{0<y_1<y_2<\dots<y_n<1-(n-1)x}n!dy_1dy_2\dots dy_n
+$$
+
+$$
+=n!\int_{0<y_1<y_2<\dots<x_n<1-(n-1)x}dy_1dy_2\dots dy_n=n!\cdot\frac{(1-(n-1)x)^n}{n!}
 $$
 
 $$
 \implies\mathbb{P}(|X_i-X_j|>x,\forall i\ne j)=(1-(n-1)x)^n.
 $$
 
-This is definitely one of the most surprisingly elegant results I've come across.
+This is definitely one of the most surprisingly elegant results I've come across. Now the cherry on top, since the minimum distance between any two distinct $X_i,X_j$ is non-negative almost surely, we can use the tail integration formula on the probability above to obtain another $\textbf{great expectation}$:
+
+$$
+\mathbb{E}\left[\min_{i\ne j}(|X_i-X_j|)\right]=\int_0^{\frac{1}{n+1}}\mathbb{P}(|X_i-X_j|>x,\forall i\ne j)dx
+$$
+
+By substituting $u=1-(n-1)x$, we get
+
+$$
+\int_0^{\frac{1}{n+1}}(1-(n-1)x)^ndx=\frac{1}{n-1}\int_0^1udu=\frac{1}{(n-1)(n+1)}
+$$
+
+$$
+\implies\mathbb{E}\left[\min_{i\ne j}(|X_i-X_j|)\right]=\frac{1}{n^2-1},\quad n>1
+$$
+
+Now just to sensibility-check this result, take $n=2$. $\min_{i\ne j}(|X_i-X_j|)=X_{(2)}-X_{(1)}$. Taking the expectation of the RHS yields $\frac23-\frac13=\frac13=\frac{1}{2^2-1}$. Amazing!
 
 
 

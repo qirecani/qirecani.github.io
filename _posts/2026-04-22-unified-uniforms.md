@@ -184,5 +184,5 @@ $$
 In particular, let's try to find the joint distribution of $X_{(1)},X_{(2)},\dots,X_{(n)}$. Intuitively, every permutation of $S$ is equally likely, and so we are led to believe that $f_{X_{(1)},X_{(2)},\dots,X_{(n)}}(x_1,x_2,\dots,x_n)=n!$ with support $0<x_1<x_2,\dots,x_n$. We can confirm this by taking a similar combinatorical limit from above, where
 
 $$
-f_{X_{(1)},X_{(2)},\dots,X_{(n)}}(x_1,x_2,\dots,x_n)=\lim_{\Delta x_1\to0,\Delta x_2\to0,\dots,\Delta x_n\to0}\frac{\mathbb{P}(x_1\le X_{(1)}<x_1+\Delta x_1,x_2\le X_{(2)}<x_2+\Delta x_2,\dots,x_n\le X_{(n)}<x_n+\Delta x_n)}{\Pi_{i=1}^n\Delta x_i}
+f_{X_{(1)},X_{(2)},\dots,X_{(n)}}(x_1,x_2,\dots,x_n)=\lim_{\Delta x_1\to0,\Delta x_2\to0,\dots,\Delta x_n\to0}\frac{\mathbb{P}(\bigcap_{k=1}^n\left(x_k\le X_{(k)}<x_k+\Delta x_k\right))}{\Pi_{k=1}^n\Delta x_k}=n!\Pi_{k=1}^nf_X(x_k)=n!
 $$

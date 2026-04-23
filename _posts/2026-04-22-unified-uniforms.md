@@ -267,7 +267,7 @@ y+\epsilon & \text{if } 1-y \ge x \text{ and } 1-y \ge \frac{y-x}{2}
 \end{cases}
 $$
 
-This gives Alice a winning probability of $\max(x,\frac{y-x}{2},1-y)$. To minimise this, we (or Bob and Carl) solves for $x=\frac{y-x}{2}=1-y\implies x=\frac14,y=\frac34$, which gives Alice a winning probability of $\frac14$. However, Bob and Carl would then individually realise that colluding (giving them each a win probability of $\frac38$) is dominated by further deviating to $a(x,y)+(-1)^{\mathbf{1}_{\\{a(x,y)>\frac12\\}}}\cdot\epsilon$, giving themselves a better winning probability of at least $\frac12$. Hence, no pure strategy exists for the $(n=3)$-player game (and also the $(n>3)$-player games).
+This gives Alice a winning probability of $\max(x,\frac{y-x}{2},1-y)$. To minimise this, we (or Bob and Carl) solve for $x=\frac{y-x}{2}=1-y\implies x=\frac14,y=\frac34$, which gives Alice a winning probability of $\frac14$. However, Bob and Carl would then individually realise that colluding (giving them each a win probability of $\frac38$) is dominated by further deviating to $a(x,y)+(-1)^{\mathbf{1}_{\\{a(x,y)>\frac12\\}}}\cdot\epsilon$, giving themselves a better winning probability of at least $\frac12$. Hence, no pure strategy exists for the $(n=3)$-player game (and also the $(n>3)$-player games).
 
 One may postulate that a mixed strategy exists such that all $n\ge3$ players guess from some equilibrium cdf $F^*$, and by the Indifference Principle,
 

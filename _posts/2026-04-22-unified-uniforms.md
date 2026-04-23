@@ -252,7 +252,7 @@ $$
 $$
 
 $$
-\text{What is Alice's/Bob's optimal strategy to win the game.}
+\text{What is Alice's/Bob's optimal strategy to win the game?}
 $$
 
 A Nash Equilibrium is a situation where no player could gain more by changing their own strategy (holding all other players' strategies fixed) in a game. In the game above, by symmetry, the optimal strategy is the same for both players - which is to obviously say $\frac12$. Otherwise, if one player says $x\ne\frac12$, the other player can say $x+(-1)^{\mathbf{1}_{\\{x>\frac12\\}}}\cdot\epsilon$, for some small $\epsilon>0$ to have more than a $\frac12$ probability of winning, thus incentivising the original player (who said $x$) to deviate their strategy.
@@ -275,6 +275,6 @@ $$
 \int_0^1\int_0^1\mathbb{P}(\text{Alice wins}\mid\text{Alice guesses }x)dF^*(b)dF^*(c)=\frac13,\forall x\in(0,1).
 $$
 
-However, Nash equilibria need not exist if the set of choices is infinite and non-compact, which is exactly the scenario of what we have here. In fact, lecture notes from Cornell's Algorithmic Game Theory course present a proof that no Nash equilibria exist for the $(n\ge3)$ Hotelling Game (https://www.cs.cornell.edu/courses/cs6840/2025fa/lectures/Sept10%20notes.pdf).
+However, Nash equilibria need not exist if the set of choices is infinite and non-compact, which is exactly the scenario of what we have here. In fact, lecture notes from Cornell's Algorithmic Game Theory course present a proof that no Nash equilibria exist for the $(n\ge3)$ Hotelling Game (link: https://www.cs.cornell.edu/courses/cs6840/2025fa/lectures/Sept10%20notes.pdf).
 
 We fittingly conclude this second post with a bit of curiousity that killed the cat. I'll aim to present more discrete (and solved!) games in subsequent posts. For now, I hope that this post opened up a world where problems involving $U(0,1)$ random variables were actually challenging. See you in the next one!

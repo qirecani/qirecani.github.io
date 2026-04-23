@@ -89,7 +89,7 @@ $$
 \text{What is }\mathbb{E}[X_\tau]\text{ ?}
 $$
 
-Another common misconception is to assume $\mathbb{E}[X_\tau]=\mathbb{E}[X_1]=\frac12$, however, Doob's Optional Stopping here does not apply here, because the process $\\{X_t\\}$ is not a martingale. An intuitive reason why is to see $X_t$ clearly depends on $X_1,X_2,\dots,X_{t-1}$ instead of just $X_{t-1}$. Also, $0<S=\sum_{i=1}^{\tau-1}X_i<1$ almost surely, and so $X_\tau\ge1-S$ is not uniformly distributed over $(0,1)$. In fact, we can now deduce that $\mathbb{E}[X_\tau]>\frac12$.
+Another common misconception is to assume $\mathbb{E}[X_\tau]=\mathbb{E}[X_1]=\frac12$, however, Doob's Optional Stopping here does not apply here, because the process $\\{X_t\\}$ is not a martingale. An intuitive reason why is to see that the larger $\sum_{i=1}^tX_t$ is, the smaller $X_{t+1}$ is on average, strongly suggesting that $\mathbb{E}[X_{t+1}\mid\mathcal{F}_t]\ne X_t$. Also, $0<S=\sum_{i=1}^{\tau-1}X_i<1$ almost surely, and so $X_\tau\ge1-S$ is not uniformly distributed over $(0,1)$. In fact, we can now deduce that $\mathbb{E}[X_\tau]>\frac12$.
 
 Our 'recursive expectation' approach from before will help us tackle this problem. Let's generalise and let $f(x)$ be the expected value of the last 'draw' to reach a total sum of greater than $x$. That is, for $x\in(0,1)$,
 

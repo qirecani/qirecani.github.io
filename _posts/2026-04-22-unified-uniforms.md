@@ -89,7 +89,7 @@ $$
 \text{What is }\mathbb{E}[X_\tau]\text{ ?}
 $$
 
-Another common misconception is to assume $\mathbb{E}[X_\tau]=\mathbb{E}[X_1]=\frac12$, however, Doob's Optional Stopping here does not apply here, because the process $\{{X_t\}}$ is not a martingale. An intuitive reason why is to see $X_t$ clearly depends on $X_1,X_2,\dots,X_{t-1}$ instead of just $X_{t-1}$. Also, $0<S=\sum_{i=1}^{\tau-1}X_i<1$ almost surely, and so $X_\tau\ge1-S$ is not uniformly distributed over $(0,1)$. In fact, we can now deduce that $\mathbb{E}[X_\tau]>\frac12$.
+Another common misconception is to assume $\mathbb{E}[X_\tau]=\mathbb{E}[X_1]=\frac12$, however, Doob's Optional Stopping here does not apply here, because the process $\\{X_t\\}$ is not a martingale. An intuitive reason why is to see $X_t$ clearly depends on $X_1,X_2,\dots,X_{t-1}$ instead of just $X_{t-1}$. Also, $0<S=\sum_{i=1}^{\tau-1}X_i<1$ almost surely, and so $X_\tau\ge1-S$ is not uniformly distributed over $(0,1)$. In fact, we can now deduce that $\mathbb{E}[X_\tau]>\frac12$.
 
 Our 'recursive expectation' approach from before will help us tackle this problem. Let's generalise and let $f(x)$ be the expected value of the last 'draw' to reach a total sum of greater than $x$. That is, for $x\in(0,1)$,
 
@@ -133,14 +133,18 @@ $$
 \mathbb{E}[X_\tau]=2-\frac{e}{2}\approx0.641
 $$
 
-Now, let's take a detour before doing some more problems. We shift our attention to Order Statistics. Let $S={\{X_1,X_2,\dots,X_n\}}$ be a set of $n$ i.i.d. continuous random variables - not necessarily $U(0,1)$! Denote $X_{(1)},X_{(2)},\dots,X_{(n)}$ as the *ordered permutation* of $S$, in non-decreasing order. We can use some combinatorics and hand-wavey limits to obtain the cdf and pdf of $X_{(k)}$, the $k^\text{th}$ order statistic of $S$, in terms of the cdf and pdf of $X$, in which shall be denoted as $F_X(x)$ and $f_X(x)$ respectively. For the cdf, if the $k^\text{th}$ largest element of $S$ is at most $x$, then $k$ elements of $S$ must be less than or equal to $x$, and the remaining $n-k$ elements must be strictly greater than $x$. We have $\binom{n}{k}$ choices for this arrangement, thus
+Now, let's take a detour before doing some more problems. We shift our attention to Order Statistics. Let $S=\\{X_1,X_2,\dots,X_n\\}$ be a set of $n$ i.i.d. continuous random variables - not necessarily $U(0,1)$! Denote $X_{(1)},X_{(2)},\dots,X_{(n)}$ as the *ordered permutation* of $S$, in non-decreasing order. We can use some combinatorics and hand-wavey limits to obtain the cdf and pdf of $X_{(k)}$, the $k^\text{th}$ order statistic of $S$, in terms of the cdf and pdf of $X$, in which shall be denoted as $F_X(x)$ and $f_X(x)$ respectively. For the cdf, if the $k^\text{th}$ largest element of $S$ is at most $x$, then $k$ elements of $S$ must be less than or equal to $x$, and the remaining $n-k$ elements must be strictly greater than $x$. We have $\binom{n}{k}$ choices for this arrangement, thus
 
 $$
 F_{X_{(k)}}(x)=\mathbb{P}(X_{(k)}\le x)=\binom{n}{k}\mathbb{P}(X\le x)^k\mathbb{P}(X>x)^{n-k}=\binom{n}{k}\left(F_X(x)\right)^k\left(1-F_X(x)\right)^{n-k}.
 $$
 
-Note that $f_X(x)=\frac{d}{dx}F_X(x)=\lim_{\Delta x\to0}\frac{\mathbb P(x<X\le x+\Delta x)}{\Delta x}$. We will now construct a limit to find $f_{X_{(k)}}(x)$. Following a similar combinatorical argument from above, we can reason that
+Note that $f_X(x)=\frac{d}{dx}F_X(x)=\lim_{\Delta x\to0}\frac{\mathbb P(x\le X<x+\Delta x)}{\Delta x}$. We will now construct a limit to find $f_{X_{(k)}}(x)$. Following a similar combinatorical argument from above, we can reason that
 
 $$
-\mathbb{P}(x<X_{(k)}\le x+\Delta x)=k\binom{n}{k}\mathbb{P}(X\le x)^{k-1}\mathbb{P}(x<X\le x+\Delta x)\mathbb{P}(X>x)^{n-k}=k\binom{n}{k}\left(F_X(x)\right)^{k-1}\left(1-F_X(x)\right)^{n-k}\cdot\mathbb{P}(x<X\le x+\Delta x).
+\mathbb{P}(x\le X_{(k)}<x+\Delta x)=k\binom{n}{k}\mathbb{P}(X\le x)^{k-1}\mathbb{P}(x\le X<x+\Delta x)\mathbb{P}(X>x)^{n-k}=k\binom{n}{k}\left(F_X(x)\right)^{k-1}\left(1-F_X(x)\right)^{n-k}\cdot\mathbb{P}(x\le X<x+\Delta x).
+$$
+
+$$
+\implies\lim_{\Delta x\to0}\frac{\mathbb{P}(x\le X_{(k)}<x+\Delta x)}{\Delta x}=k\binom{n}{k}\left(F_X(x)\right)^{k-1}\left(1-F_X(x)\right)^{n-k}\cdot\lim_{\Delta x\to0}\frac{\mathbb{P}(x\le X<x+\Delta x)}{\Delta x}=k\binom{n}{k}\left(F_X(x)\right)^{k-1}f_X(x)\left(1-F_X(x)\right)^{n-k}
 $$

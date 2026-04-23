@@ -221,7 +221,7 @@ $$
 \implies\mathbb{E}\left[\min_{i\ne j}(|X_i-X_j|)\right]=\frac{1}{n^2-1},\quad n>1
 $$
 
-Now just to sensibility-check this result, take $n=2$. $\min_{i\ne j}(|X_i-X_j|)=X_{(2)}-X_{(1)}$. Taking the expectation of the RHS yields $\frac23-\frac13=\frac13=\frac{1}{2^2-1}$. Amazing!
+Now just to sensibility-check this result, take $n = 2$, and notice that $\min_{i \ne j}(|X_i - X_j|) = X_{(2)} - X_{(1)}$. Taking the expectation of the RHS yields $\frac{2}{3} - \frac{1}{3} = \frac{1}{3} = \frac{1}{2^2 - 1}$. Amazing!
 
 
 

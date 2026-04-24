@@ -89,7 +89,7 @@ $$
 \text{What is }\mathbb{E}[X_\tau]\text{ ?}
 $$
 
-Another common misconception is to assume $\mathbb{E}[X_\tau]=\mathbb{E}[X_1]=\frac12$, however, Doob's Optional Stopping here does not apply here, because the process $\\{X_t\\}$ is not a martingale. An intuitive reason why is to see that the larger $X_t$ is, the smaller $X_{t+1}$ is on average, strongly suggesting that
+Another common misconception is to assume $\mathbb{E}[X_\tau]=\mathbb{E}[X_1]=\frac12$, however, Doob's Optional Stopping Theorem does not apply here, because the process $\\{X_t\\}$ is not a martingale. An intuitive reason why is to see that the larger $X_t$ is, the smaller $X_{t+1}$ is on average, strongly suggesting that
 
 $$\mathbb{E}[X_{t+1}\mid\mathcal{F}_t]\ne X_t.$$
 
